@@ -37,8 +37,8 @@ func main() {
 	select {
 	case <-ctx.Done():
 		log.Printf("Time exceeded")
-	case <-time.After(time.Millisecond * 400):
-		_, err := io.Copy(file, res.Body)
+	case <-time.After(time.Millisecond * 200):
+		_, err = io.Copy(file, res.Body)
 		if err != nil {
 			fmt.Println("Erro ao copiar o corpo da resposta:", err)
 		}
